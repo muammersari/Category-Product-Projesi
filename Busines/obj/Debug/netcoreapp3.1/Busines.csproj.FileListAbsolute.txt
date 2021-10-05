@@ -1,0 +1,17 @@
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Busines.deps.json
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Busines.dll
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Busines.pdb
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.csproj.AssemblyReference.cache
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.AssemblyInfoInputs.cache
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.AssemblyInfo.cs
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.csproj.CoreCompileInputs.cache
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.dll
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.pdb
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\Muammer\source\repos\KoyuncuProject\Busines\obj\Debug\netcoreapp3.1\Busines.csproj.CopyComplete

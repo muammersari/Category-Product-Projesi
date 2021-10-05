@@ -1,0 +1,14 @@
+﻿
+table thead {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+    background-color:lightgray;
+}
+
+.divTable {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: auto;
+    max-height:400px;
+}

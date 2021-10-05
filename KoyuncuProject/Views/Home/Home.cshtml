@@ -1,0 +1,116 @@
+﻿@model Entities.Dto.ViewModel.ViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="~/StyleFolder/Style.css" rel="stylesheet" />
+<style>
+    .fontsize {
+        font-size: 2rem;
+    }
+</style>
+<div class="container-fluid mt-lg-5">
+    <div class="row mt-lg-5 justify-content-center">
+
+        <div class="col-12 col-lg-4 shadow-sm text-center pt-3" id="categoryArea">
+            <div class="fontsize">Kategori Ekle</div>
+            <hr />
+            <input type="text" id="categoryName" class="form-control mt-2" placeholder="Kategori ismi giriniz" />
+            <input type="button" id="btn_CategoryAdd" class="btn btn-success mt-2 mb-2" value="Kategori Ekle" />
+        </div>
+
+        <div class="col-12 col-lg-4 shadow-sm mt-4 mt-lg-0 ml-lg-5 text-center pt-3" id="productArea">
+            <div class="fontsize">Ürün Ekle</div>
+            <hr />
+            <input type="text" id="productName" class="form-control mt-2" placeholder="Ürün ismi giriniz" />
+            <div class="d-flex mt-2">
+                <input type="text" id="unitPrice" class="form-control" onkeyup="FirstValueCheck(this.id)" onkeypress="return isNumberKey(event)" placeholder="Ürün fiyatı giriniz" />
+                <input type="text" id="unitsInStock" class="form-control ml-2" onkeyup="FirstValueCheck(this.id)" onkeypress="return isNumberKey(event)" placeholder="Ürün stok sayısı giriniz" />
+            </div>
+
+            <select class="form-control mt-2" id="categoryList">
+                <option value="0">Seçiniz</option>
+            </select>
+            <input type="button" id="btn_ProductAdd" class="btn btn-success mt-2 mb-2" value="Ürün Ekle" />
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-lg-5 shadow-sm text-center">
+
+        <div class="col-11 mt-2 divTable">
+            <table class="table table-bordered table-hover">
+                <thead class="">
+                    <tr>
+                        <td></td>
+                        <td>Ürün ID</td> @*Ürün başlıkları*@
+                        <td>Kategori Adı</td>
+                        <td>Ürün Adı</td>
+                        <td>Birim Fiyat</td>
+                        <td>Stok Adet</td>
+                    </tr>
+                </thead>
+                <tbody id="productBody" class="mt-1">
+                    @{ //Ürün İçeriği
+                        if (Model.products != null)
+                        {
+                            foreach (var product in Model.products)
+                            {
+                                foreach (var category in Model.categories)
+                                {
+                                    if (product.CategoryId == category.CategoryId)
+                                    {
+                                        <tr id="tr@(product.ProductId)">
+                                            <td><input type="button" value="Sil" id="@product.ProductId" class="btn btn-danger btn-sm btnProductDelete" /></td>
+                                            <td>@product.ProductId</td>
+                                            <td>@category.CategoryName</td>
+                                            <td>@product.ProductName</td>
+                                            <td>@product.UnitPrice</td>
+                                            <td>@product.UnitsInStock</td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/JavascriptFolder/CategoryAndProductTransactions.js"></script>
+<script>
+    $(document).ready(function () {
+
+        CategoryGetList(); // sayfa yüklendiğinde otomatik olarak kategori listesi çekilip select listesine aktarılıyor.
+        $("#btn_CategoryAdd").click(function () {
+            CategoyAdd(); // kategori ekleme butonun a basıldığında kategori ekleme işlemleri yapılıyor.
+        });
+
+        $("#btn_ProductAdd").click(function () {
+            ProductAdd(); // ürün ekleme butonuna basıldığında ürün eklem işlemleri yapılıyor
+        });
+
+        $(".btnProductDelete").click(function () {
+            ProductDelete(this.id); // ürün ekleme butonuna basıldığında ürün eklem işlemleri yapılıyor
+        });
+
+
+        $("#unitPrice").keyup(function (event) {
+            if (this.value[0] == "," || this.value[0] == "0") {
+                this.value = this.value.substring(1);
+                alert("İlk değer ',' veya '0' olamaz");
+            }
+        });
+
+        //$("#unitPrice").keyup(function (event) {
+        //    if (this.value[0] == "," || this.value[0] == "0") {
+        //        this.value = this.value.substring(1);
+        //        alert("İlk değer ',' veya '0' olamaz");
+        //    }
+        //});
+    });
+</script>
